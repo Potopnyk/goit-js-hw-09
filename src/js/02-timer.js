@@ -44,19 +44,16 @@ function startCountdown(selectedDates) {
         }
     }, 1000);
 };
-function populateValues(formatedDifferenceInMs) {
-    el.secondsValue.textContent = formatedDifferenceInMs.seconds.toString().padStart(2, '0');
-    el.minutesValue.textContent = formatedDifferenceInMs.minutes.toString().padStart(2, '0');
-    el.hoursValue.textContent = formatedDifferenceInMs.hours.toString().padStart(2, '0');
-    el.daysValue.textContent = formatedDifferenceInMs.days.toString().padStart(2, '0');
+
+
+        
+function populateValues({seconds = '00', minutes = '00', hours = '00', days = '00'}) {
+    el.secondsValue.textContent = seconds.toString().padStart(2, '0');
+    el.minutesValue.textContent =  minutes.toString().padStart(2, '0');
+    el.hoursValue.textContent =  hours.toString().padStart(2, '0');
+    el.daysValue.textContent =  days.toString().padStart(2, '0');
 };
 
-function resetValues() {
-    el.daysValue.textContent = '00';
-    el.hoursValue.textContent = '00';
-    el.minutesValue.textContent = '00';
-    el.secondsValue.textContent = '00';
-};
 
 function convertMs(ms) {
     const second = 1000;
